@@ -1,0 +1,12 @@
+kubectl create -f - << EOF 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-run-as-root
+  namespace: n1
+spec:
+  containers:
+  - name: busybox
+    image: busybox:latest
+    command: ["/bin/sleep", "3600"]
+EOF
